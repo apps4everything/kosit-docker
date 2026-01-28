@@ -36,15 +36,34 @@ docker run -d -p 8081:8081 --name kosit-validator apps4everything/kosit-validato
 
 ### Build Locally
 
+To build the image yourself, you need to download the KoSIT Validator and XRechnung scenario files first.
+
+#### 1. Clone the repository
+
 ```bash
-# Clone the repository
 git clone https://github.com/apps4everything/kosit-docker.git
 cd kosit-docker
+```
 
-# Build the image
+#### 2. Download KoSIT Validator
+
+```bash
+wget https://github.com/itplr-kosit/validator/releases/download/v1.6.0/validator-1.6.0-distribution.zip
+unzip validator-1.6.0-distribution.zip
+cp validator-1.6.0/libs/validator-1.6.0-standalone.jar .
+```
+
+#### 3. Download XRechnung Scenarios
+
+```bash
+wget https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-2025-07-10/validator-configuration-xrechnung_3.0.2_2025-07-10.zip
+unzip validator-configuration-xrechnung_3.0.2_2025-07-10.zip
+```
+
+#### 4. Build and run
+
+```bash
 docker build -t kosit-validator:1.6.0 .
-
-# Run the container
 docker run -d -p 8081:8081 --name kosit-validator kosit-validator:1.6.0
 ```
 
