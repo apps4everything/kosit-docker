@@ -50,7 +50,6 @@ cd kosit-docker
 ```bash
 wget https://github.com/itplr-kosit/validator/releases/download/v1.6.0/validator-1.6.0-distribution.zip
 unzip validator-1.6.0-distribution.zip
-cp validator-1.6.0/libs/validator-1.6.0-standalone.jar .
 ```
 
 #### 3. Download XRechnung Scenarios
