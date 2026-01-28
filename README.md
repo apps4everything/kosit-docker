@@ -17,7 +17,7 @@ This Docker image provides an HTTP-based validation service for German e-invoice
 ## Quick Start
 
 ```bash
-docker run -d -p 8081:8081 --name kosit-validator apps4everything/kosit-validator:1.6.0
+docker run -d -p 8081:8081 --name kosit-validator apps4everything/kosit-validator:1.6.0-3.0.2
 ```
 
 The validator is now available at `http://localhost:8081`.
@@ -28,15 +28,15 @@ The validator is now available at `http://localhost:8081`.
 
 ```bash
 # Pull the image
-docker pull apps4everything/kosit-validator:1.6.0
+docker pull apps4everything/kosit-validator:1.6.0-3.0.2
 
 # Run the container
-docker run -d -p 8081:8081 --name kosit-validator apps4everything/kosit-validator:1.6.0
+docker run -d -p 8081:8081 --name kosit-validator apps4everything/kosit-validator:1.6.0-3.0.2
 ```
 
 ### Build Locally
 
-To build the image yourself, you need to download the KoSIT Validator and XRechnung scenario files first.
+To build the image yourself you can now simply build from the Dockerfile, no downloads needed any more.
 
 #### 1. Clone the repository
 
@@ -45,25 +45,11 @@ git clone https://github.com/apps4everything/kosit-docker.git
 cd kosit-docker
 ```
 
-#### 2. Download KoSIT Validator
+#### 2. Build and run
 
 ```bash
-wget https://github.com/itplr-kosit/validator/releases/download/v1.6.0/validator-1.6.0-distribution.zip
-unzip validator-1.6.0-distribution.zip
-```
-
-#### 3. Download XRechnung Scenarios
-
-```bash
-wget https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-2025-07-10/validator-configuration-xrechnung_3.0.2_2025-07-10.zip
-unzip validator-configuration-xrechnung_3.0.2_2025-07-10.zip
-```
-
-#### 4. Build and run
-
-```bash
-docker build -t kosit-validator:1.6.0 .
-docker run -d -p 8081:8081 --name kosit-validator kosit-validator:1.6.0
+docker build -t kosit-validator .
+docker run -d -p 8081:8081 --name kosit-validator kosit-validator
 ```
 
 ## API Endpoints

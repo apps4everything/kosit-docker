@@ -1,41 +1,47 @@
-# Multi-stage build for KoSIT Validator 1.6.0 with XRechnung 3.0.2
 FROM eclipse-temurin:21-jre-alpine AS runtime
 
-# Install wget for healthcheck
-RUN apk add --no-cache wget
+ARG VALIDATOR_VERSION=1.6.0
+ARG XRECHNUNG_VERSION=3.0.2
+ARG XRECHNUNG_CONFIG_DATE=2025-07-10
 
-# Create non-root user for security
+LABEL maintainer="apps4everything"
+LABEL description="XRechnung ${XRECHNUNG_VERSION} Validator with full EN 16931 + XRechnung (BR-DE) validation"
+LABEL validator.version="${VALIDATOR_VERSION}"
+LABEL xrechnung.version="${XRECHNUNG_VERSION}"
+LABEL xrechnung.config.date="${XRECHNUNG_CONFIG_DATE}"
+
+RUN apk add --no-cache wget unzip
+
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-# Set working directory
 WORKDIR /app
 
-# Copy KoSIT Validator 1.6.0
-COPY validator-1.6.0-standalone.jar /app/validator.jar
+RUN cd /app
 
-# Copy XRechnung 3.0.2 scenario configuration
-COPY scenarios.xml /app/
-COPY EN16931-CII-validation.xslt /app/
-COPY EN16931-UBL-validation.xslt /app/
-COPY resources /app/resources
+RUN wget -q "https://github.com/itplr-kosit/validator/releases/download/v${VALIDATOR_VERSION}/validator-${VALIDATOR_VERSION}.zip" \
+    -O validator.zip \
+    && unzip -q validator.zip \
+	&& mv validator-${VALIDATOR_VERSION}-standalone.jar validator.jar \
+    && rm validator.zip
 
-# Set permissions
+RUN wget -q "https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-${XRECHNUNG_CONFIG_DATE}/validator-configuration-xrechnung_${XRECHNUNG_VERSION}_${XRECHNUNG_CONFIG_DATE}.zip" \
+    -O xrechnung-config.zip \
+    && unzip -q xrechnung-config.zip \
+    && rm xrechnung-config.zip
+
+RUN apk del unzip
+
 RUN chown -R appuser:appgroup /app
 
-# Switch to non-root user
 USER appuser
 
-# Expose HTTP port
 EXPOSE 8081
 
-# Healthcheck
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
     CMD wget -qO- http://localhost:8081/server/health || exit 1
 
-# Run validator as HTTP daemon
-CMD ["java", "-jar", "validator.jar", \
+CMD ["java", "-Xms256m", "-Xmx512m", "-jar", "validator.jar", \
      "-s", "scenarios.xml", \
-     "-r", "/app", \
      "-D", \
      "-H", "0.0.0.0", \
      "-P", "8081", \
