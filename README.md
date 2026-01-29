@@ -4,7 +4,8 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/apps4everything/kosit-validator)](https://hub.docker.com/r/apps4everything/kosit-validator)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-A ready-to-use Docker image containing the official [KoSIT Validator](https://github.com/itplr-kosit/validator) (v1.6.0) pre-configured with [XRechnung 3.0.2](https://xeinkauf.de/xrechnung/) validation scenarios.
+A ready-to-use Docker image containing the official [KoSIT Validator](https://github.com/itplr-kosit/validator) (v1.6.0) 
+pre-configured with [XRechnung 3.0.2](https://xeinkauf.de/xrechnung/) validation scenarios.
 
 ## What is this?
 
@@ -52,15 +53,11 @@ docker build -t kosit-validator .
 docker run -d -p 8081:8081 --name kosit-validator kosit-validator
 ```
 
-## API Endpoints
-
-### Health Check
+#### 3. Health Check
 
 ```bash
 curl http://localhost:8081/server/health
 ```
-
-Returns the health status of the validator service.
 
 ### Validate Invoice
 
@@ -74,61 +71,6 @@ The response contains the validation report in XML format, including:
 - Validation status (valid/invalid)
 - List of errors and warnings
 - Applied validation rules
-
-### Example with File
-
-```bash
-# Validate a local XRechnung file
-curl -X POST http://localhost:8081/ \
-  -H "Content-Type: application/xml" \
-  --data-binary @path/to/your/invoice.xml
-```
-
-## Configuration
-
-| Setting | Value |
-|---------|-------|
-| HTTP Port | `8081` |
-| Health Endpoint | `/server/health` |
-| Validation Endpoint | `POST /` |
-| Base Image | `eclipse-temurin:21-jre-alpine` |
-| KoSIT Validator | `1.6.0` |
-| XRechnung Scenarios | `3.0.2` |
-
-## Docker Compose
-
-```yaml
-services:
-  kosit-validator:
-    image: apps4everything/kosit-validator:1.6.0
-    ports:
-      - "8081:8081"
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:8081/server/health"]
-      interval: 30s
-      timeout: 5s
-      start_period: 10s
-```
-
-## Security
-
-This image follows security best practices:
-
-- Runs as non-root user (`appuser`)
-- Based on Alpine Linux (minimal attack surface)
-- No unnecessary packages installed
-- Built-in health checks
-
-## Included Components
-
-| Component | Version | Description |
-|-----------|---------|-------------|
-| KoSIT Validator | 1.6.0 | Core validation engine |
-| XRechnung Scenarios | 3.0.2 | German e-invoice validation rules |
-| EN16931 CII Validation | included | Cross Industry Invoice support |
-| EN16931 UBL Validation | included | Universal Business Language support |
-| Eclipse Temurin JRE | 21 | Java runtime environment |
 
 ## Related Links
 
