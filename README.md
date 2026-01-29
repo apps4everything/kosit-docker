@@ -40,8 +40,6 @@ docker run -d -p 8081:8081 --name kosit-validator \
   apps4everything/kosit-validator:1.6.0-3.0.2
 ```
 
-📖 [Full documentation →](xrechnung/README.md)
-
 ---
 
 ## Peppol BIS Billing
@@ -54,8 +52,6 @@ Validates international Peppol invoices: **Peppol BIS Billing 3.0.20** and **EN1
 docker run -d -p 8081:8081 --name kosit-validator-peppol \
   apps4everything/kosit-validator-peppol:1.6.0-3.0.20
 ```
-
-📖 [Full documentation →](peppol/README.md)
 
 ---
 
@@ -138,3 +134,4 @@ The KoSIT Validator is provided by [KoSIT](https://www.xoev.de/) under their res
   <sub>Made with ❤️ in Märkisch-Oderland by <a href="https://apps4everything.de">apps4everything</a></sub>
 
 </p>
+
