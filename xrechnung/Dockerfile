@@ -22,6 +22,8 @@ RUN wget -q "https://github.com/itplr-kosit/validator/releases/download/v${VALID
     -O validator.zip \
     && unzip -q validator.zip \
 	&& mv validator-${VALIDATOR_VERSION}-standalone.jar validator.jar \
+    && rm validator-${VALIDATOR_VERSION}.jar \
+	&& rm -r libs \
     && rm validator.zip
 
 RUN wget -q "https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-${XRECHNUNG_CONFIG_DATE}/validator-configuration-xrechnung_${XRECHNUNG_VERSION}_${XRECHNUNG_CONFIG_DATE}.zip" \
