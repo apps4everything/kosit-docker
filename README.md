@@ -9,7 +9,7 @@ Ready-to-use Docker images for validating European e-invoices using the official
 
 | Image | Use Case | Standards | Docker Hub |
 |-------|----------|-----------|------------|
-| **[XRechnung](#xrechnung)** | German B2B & B2G invoices | XRechnung 3.0.2, ZUGFeRD, EN16931 | [![Docker Pulls](https://img.shields.io/docker/pulls/apps4everything/kosit-validator?style=flat-square&logo=docker)](https://hub.docker.com/r/apps4everything/kosit-validator) |
+| **[XRechnung](#xrechnung)** | German B2B & B2G invoices | XRechnung 3.0.2, ZUGFeRD, EN16931 | [![Docker Pulls](https://img.shields.io/docker/pulls/apps4everything/kosit-validator-xrechnung?style=flat-square&logo=docker)](https://hub.docker.com/r/apps4everything/kosit-validator-xrechnung) |
 | **[Peppol BIS](#peppol-bis-billing)** | International Peppol invoices | Peppol BIS 3.0.20, EN16931 | [![Docker Pulls](https://img.shields.io/docker/pulls/apps4everything/kosit-validator-peppol?style=flat-square&logo=docker)](https://hub.docker.com/r/apps4everything/kosit-validator-peppol) |
 
 ## Which Image Do I Need?
@@ -31,8 +31,8 @@ Not sure?
 
 ## XRechnung
 
-[![Docker Image Version](https://img.shields.io/docker/v/apps4everything/kosit-validator-xrechnung?sort=semver&style=flat-square&logo=docker&label=version)](https://hub.docker.com/r/apps4everything/kosit-validator)
-[![Docker Image Size](https://img.shields.io/docker/image-size/apps4everything/kosit-validator-xrechnung?style=flat-square&logo=docker&label=size)](https://hub.docker.com/r/apps4everything/kosit-validator)
+[![Docker Image Version](https://img.shields.io/docker/v/apps4everything/kosit-validator-xrechnung?sort=semver&style=flat-square&logo=docker&label=version)](https://hub.docker.com/r/apps4everything/kosit-validator-xrechnung)
+[![Docker Image Size](https://img.shields.io/docker/image-size/apps4everything/kosit-validator-xrechnung?style=flat-square&logo=docker&label=size)](https://hub.docker.com/r/apps4everything/kosit-validator-xrechnung)
 
 Validates German e-invoices: **XRechnung 3.0.2**, **ZUGFeRD/Factur-X**, and **EN16931** (UBL & CII).
 ```bash
@@ -134,6 +134,7 @@ The KoSIT Validator is provided by [KoSIT](https://www.xoev.de/) under their res
   <sub>Made with ❤️ in Märkisch-Oderland by <a href="https://apps4everything.de">apps4everything</a></sub>
 
 </p>
+
 
 
 
