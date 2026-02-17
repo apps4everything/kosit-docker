@@ -31,8 +31,8 @@ Not sure?
 
 ## XRechnung
 
-[![Docker Image Version](https://img.shields.io/docker/v/apps4everything/kosit-validator?sort=semver&style=flat-square&logo=docker&label=version)](https://hub.docker.com/r/apps4everything/kosit-validator)
-[![Docker Image Size](https://img.shields.io/docker/image-size/apps4everything/kosit-validator?style=flat-square&logo=docker&label=size)](https://hub.docker.com/r/apps4everything/kosit-validator)
+[![Docker Image Version](https://img.shields.io/docker/v/apps4everything/kosit-validator-xrechnung?sort=semver&style=flat-square&logo=docker&label=version)](https://hub.docker.com/r/apps4everything/kosit-validator)
+[![Docker Image Size](https://img.shields.io/docker/image-size/apps4everything/kosit-validator-xrechnung?style=flat-square&logo=docker&label=size)](https://hub.docker.com/r/apps4everything/kosit-validator)
 
 Validates German e-invoices: **XRechnung 3.0.2**, **ZUGFeRD/Factur-X**, and **EN16931** (UBL & CII).
 ```bash
@@ -134,4 +134,5 @@ The KoSIT Validator is provided by [KoSIT](https://www.xoev.de/) under their res
   <sub>Made with ❤️ in Märkisch-Oderland by <a href="https://apps4everything.de">apps4everything</a></sub>
 
 </p>
+
 
