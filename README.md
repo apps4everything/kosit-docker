@@ -1,8 +1,5 @@
 # KoSIT Validator Docker Images
 
-[![GitHub Stars](https://img.shields.io/github/stars/apps4everything/kosit-docker?style=flat-square&logo=github)](https://github.com/apps4everything/kosit-docker)
-[![GitHub last commit](https://img.shields.io/github/last-commit/apps4everything/kosit-docker?style=flat-square)](https://github.com/apps4everything/kosit-docker/commits/master)
-
 Ready-to-use Docker images for validating European e-invoices using the official [KoSIT Validator](https://github.com/itplr-kosit/validator).
 
 ## Available Images
@@ -134,6 +131,7 @@ The KoSIT Validator is provided by [KoSIT](https://www.xoev.de/) under their res
   <sub>Made with ❤️ in Märkisch-Oderland by <a href="https://apps4everything.de">apps4everything</a></sub>
 
 </p>
+
 
 
 
