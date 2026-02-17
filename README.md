@@ -37,7 +37,7 @@ Not sure?
 Validates German e-invoices: **XRechnung 3.0.2**, **ZUGFeRD/Factur-X**, and **EN16931** (UBL & CII).
 ```bash
 docker run -d -p 8081:8081 --name kosit-validator \
-  apps4everything/kosit-validator:1.6.0-3.0.2
+  apps4everything/kosit-validator-xrechnung:3.0.2-1
 ```
 
 ---
@@ -50,7 +50,7 @@ docker run -d -p 8081:8081 --name kosit-validator \
 Validates international Peppol invoices: **Peppol BIS Billing 3.0.20** and **EN16931** (UBL & CII).
 ```bash
 docker run -d -p 8081:8081 --name kosit-validator-peppol \
-  apps4everything/kosit-validator-peppol:1.6.0-3.0.20
+  apps4everything/kosit-validator-peppol:3.0.20-1
 ```
 
 ---
@@ -134,5 +134,6 @@ The KoSIT Validator is provided by [KoSIT](https://www.xoev.de/) under their res
   <sub>Made with ❤️ in Märkisch-Oderland by <a href="https://apps4everything.de">apps4everything</a></sub>
 
 </p>
+
 
 
