@@ -109,7 +109,7 @@ docker build -t kosit-validator-peppol .
 ## Related Projects
 
 - 🌐 [xvalidator.de](https://xvalidator.de) – Free online validator using these images
-- 📄 [faktura.a4e.app](https://faktura.a4e.app) – E-invoice generator (Beta)
+- 📄 [xml-rechnung.eu](https://xml-rechnung.eu) – Generate, validate and archive electronic invoice 
 
 ---
 
@@ -134,6 +134,7 @@ The KoSIT Validator is provided by [KoSIT](https://www.xoev.de/) under their res
   <sub>Made with ❤️ in Märkisch-Oderland by <a href="https://apps4everything.de">apps4everything</a></sub>
 
 </p>
+
 
 
 
