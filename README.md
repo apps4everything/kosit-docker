@@ -7,7 +7,7 @@ Ready-to-use Docker images for validating European e-invoices using the official
 | Image | Use Case | Standards | Docker Hub |
 |-------|----------|-----------|------------|
 | **[XRechnung](#xrechnung)** | German B2B & B2G invoices | XRechnung 3.0.2, ZUGFeRD, EN16931 | [![Docker Pulls](https://img.shields.io/docker/pulls/apps4everything/kosit-validator-xrechnung?style=flat-square&logo=docker)](https://hub.docker.com/r/apps4everything/kosit-validator-xrechnung) |
-| **[Peppol BIS](#peppol-bis-billing)** | International Peppol invoices | Peppol BIS 3.0.20, EN16931 | [![Docker Pulls](https://img.shields.io/docker/pulls/apps4everything/kosit-validator-peppol?style=flat-square&logo=docker)](https://hub.docker.com/r/apps4everything/kosit-validator-peppol) |
+| **[Peppol BIS](#peppol-bis-billing)** | International Peppol invoices | Peppol BIS 3.0.21, EN16931 | [![Docker Pulls](https://img.shields.io/docker/pulls/apps4everything/kosit-validator-peppol?style=flat-square&logo=docker)](https://hub.docker.com/r/apps4everything/kosit-validator-peppol) |
 
 ## Which Image Do I Need?
 ```
@@ -34,7 +34,7 @@ Not sure?
 Validates German e-invoices: **XRechnung 3.0.2**, **ZUGFeRD/Factur-X**, and **EN16931** (UBL & CII).
 ```bash
 docker run -d -p 8081:8081 --name kosit-validator \
-  apps4everything/kosit-validator-xrechnung:3.0.2-1
+  apps4everything/kosit-validator-xrechnung:3.0.2-3
 ```
 
 ---
@@ -44,7 +44,7 @@ docker run -d -p 8081:8081 --name kosit-validator \
 [![Docker Image Version](https://img.shields.io/docker/v/apps4everything/kosit-validator-peppol?sort=semver&style=flat-square&logo=docker&label=version)](https://hub.docker.com/r/apps4everything/kosit-validator-peppol)
 [![Docker Image Size](https://img.shields.io/docker/image-size/apps4everything/kosit-validator-peppol?style=flat-square&logo=docker&label=size)](https://hub.docker.com/r/apps4everything/kosit-validator-peppol)
 
-Validates international Peppol invoices: **Peppol BIS Billing 3.0.20** and **EN16931** (UBL & CII).
+Validates international Peppol invoices: **Peppol BIS Billing 3.0.21** and **EN16931** (UBL & CII).
 ```bash
 docker run -d -p 8081:8081 --name kosit-validator-peppol \
   apps4everything/kosit-validator-peppol:3.0.21
@@ -96,10 +96,10 @@ docker build -t kosit-validator-peppol .
 
 ## Version Matrix
 
-| Image                           | KoSIT Validator | Configuration                |
-|---------------------------------|-----------------|------------------------------|
-| `kosit-validator-xrechnung:3.0.2-1` | 1.6.3           | XRechnung 3.0.2 (2025-07-10) |
-| `kosit-validator-peppol:3.0.21` | 1.6.3           | Peppol BIS Billing 3.0.21    |
+| Image                               | KoSIT Validator | Configuration                |
+|-------------------------------------|-----------------|------------------------------|
+| `kosit-validator-xrechnung:3.0.2-3` | 1.6.3           | XRechnung 3.0.2 (2026-01-31) |
+| `kosit-validator-peppol:3.0.21`     | 1.6.3           | Peppol BIS Billing 3.0.21    |
 
 ---
 
