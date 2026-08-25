@@ -47,7 +47,7 @@ docker run -d -p 8081:8081 --name kosit-validator \
 Validates international Peppol invoices: **Peppol BIS Billing 3.0.20** and **EN16931** (UBL & CII).
 ```bash
 docker run -d -p 8081:8081 --name kosit-validator-peppol \
-  apps4everything/kosit-validator-peppol:3.0.20-1
+  apps4everything/kosit-validator-peppol:3.0.21
 ```
 
 ---
@@ -96,10 +96,10 @@ docker build -t kosit-validator-peppol .
 
 ## Version Matrix
 
-| Image | KoSIT Validator | Configuration |
-|-------|-----------------|---------------|
-| `kosit-validator:1.6.0-3.0.2` | 1.6.0 | XRechnung 3.0.2 (2025-07-10) |
-| `kosit-validator-peppol:1.6.0-3.0.20` | 1.6.0 | Peppol BIS Billing 3.0.20 |
+| Image                           | KoSIT Validator | Configuration                |
+|---------------------------------|-----------------|------------------------------|
+| `kosit-validator-xrechnung:3.0.2-1` | 1.6.3           | XRechnung 3.0.2 (2025-07-10) |
+| `kosit-validator-peppol:3.0.21` | 1.6.3           | Peppol BIS Billing 3.0.21    |
 
 ---
 

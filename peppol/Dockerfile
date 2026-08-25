@@ -3,7 +3,7 @@
 FROM eclipse-temurin:21-jre-alpine AS runtime
 
 # Build arguments
-ARG VALIDATOR_VERSION=1.6.0
+ARG VALIDATOR_VERSION=1.6.3
 ARG PEPPOL_VERSION=3.0.20
 
 # Labels
@@ -21,13 +21,8 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 # Set working directory
 WORKDIR /app
 
-RUN wget -q "https://github.com/itplr-kosit/validator/releases/download/v${VALIDATOR_VERSION}/validator-${VALIDATOR_VERSION}.zip" \
-    -O validator.zip \
-    && unzip -q validator.zip \
-	&& mv validator-${VALIDATOR_VERSION}-standalone.jar validator.jar \
-    && rm validator-${VALIDATOR_VERSION}.jar \
-	&& rm -r libs \
-    && rm validator.zip
+RUN wget -q "https://github.com/itplr-kosit/validator/releases/download/v${VALIDATOR_VERSION}/validator-${VALIDATOR_VERSION}-standalone.jar" \
+    -O validator.jar
 
 # https://github.com/itplr-kosit/validator-configuration-bis/releases/download/release-3.0.20/validation-configuration-bis-3.0.20.zip
 RUN wget -q "https://github.com/itplr-kosit/validator-configuration-bis/releases/download/release-${PEPPOL_VERSION}/validation-configuration-bis-${PEPPOL_VERSION}.zip" \
